@@ -47,20 +47,20 @@ var number2 = parseFloat(prompt = ("Enter second number: "));
 return {number1, number2};
 }
 
-function calculate(operation, num1, num2){
-if (operator === "+") {
+function calculate(operation, number1, number2){
+if (operation === "+") {
     result = number1 + number2;
 }
 
-else if (operator === "-") {
+else if (operation === "-") {
     result =  number1 - number2;
 }
 
-else if (operator === "*") {
+else if (operation === "*") {
     result = number1 * number2;
 }
 
-else if (operator === "/") {
+else if (operation === "/") {
     result = number1 / number2;
 }
 
@@ -77,10 +77,9 @@ function runCalculator() {
   const operation = getOperation();
   const { number1, number2 } = getNumbers();
   //num1 not identified programiz.com
-  const result = calculate(operation, num1, num2);
+  const result = calculate(operation, number1, number2);
   alert(`Result: ${result}`);
 }
 // Run the calculator
 runCalculator();
-
 */
