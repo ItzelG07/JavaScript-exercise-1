@@ -1,29 +1,28 @@
-//put script element before the closing body tag
+//put script element before the closing body tag in HTML file
 
-var operator = ("Choose an operation: +, -, *, /");
+// operator input
+const operator = prompt("Choose an operation (+, -, *, /): ");
 
-var number1 = parseFloat (prompt ("Enter first number: "));
-var number2 = parseFloat (prompt ("Enter second number: "));
-//return { num1, num2};
+// number input
+const number1 = parseFloat(prompt('Enter first number: '));
+const number2 = parseFloat(prompt('Enter second number: '));
 
 let result;
 
-if (operator === "+") {
+if (operator === '+') {
     result = number1 + number2;
 }
-
-else if (operator === "-") {
-    result =  number1 - number2;
+else if (operator ==='-') {
+    result = number1 - number2;
 }
-
-else if (operator === "*") {
+else if (operator ==='*') {
     result = number1 * number2;
 }
-
-else if (operation === "/") {
+else if (operator === '/') {
     result = number1 / number2;
 }
 
+// error alerts
 if (number2 === 0) {
     result = "Cannot divide by zero";
 }
@@ -32,10 +31,13 @@ else {
     result = "Invalid Operation";
 }
 
-document.write ("The result of the operation is: " + result);
+// output
+// output should use document.write.
+console.log (`${number1} ${operator} ${number2} = ${result}`);
 
-/* 
-//put script element before the closing body tag
+
+//first draft, a complete mess
+/*
 function getOperation() {
 var operation = ("Choose an operation: +, -, *, /");
 return operation;
