@@ -89,7 +89,8 @@ console.log (`${number1} ${operator} ${number2} = ${result}`);*/
 
 // THIRD DRAFT, hopefully the last time
 // shoud shorten the words, number->num
-document.getElementById ('calculator').addEventListener ('submit', function (event) {
+document.getElementById ('Calculator').addEventListener ('submit', function (event) {
+    event.preventDefault(); //make the results stay and not go away quickly
 
 let operator = prompt ("Choose an operation (+, -, *, /): ");
 let num1 = parseFloat(prompt('Enter first number: '));
@@ -107,19 +108,18 @@ else if (operator ==='*') {
     result = num1 * num2;
 }
 else if (operator === '/') {
+    if (num2 === 0) {
+        alert ("Cannot divide by zero");
+        return;
+    }
     result = num1 / num2;
 }
 
 // error alerts
-if (num2 === 0) {
-    alert ("Cannot divide by zero");
-    return;
-}
-
 else {
     alert ("Invalid Operation");
     return;
 }
 
-document.getElementById ('result').innerText = 'Result: ${num1} ${operator} ${num2} = ${result}';
-}); */
+document.getElementById ('result').innerText = `Result: ${num1} ${operator} ${num2} = ${result}`;
+});
